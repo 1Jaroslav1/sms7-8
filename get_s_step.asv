@@ -1,8 +1,8 @@
 function [s_step] = get_s_step()
     load('odp_skokowa.mat')
 
-    k1 = 19;
-    k2 = 650 + 19;
+    k1 = 9;
+    k2 = 650;
 
 %     moment_skoku = 19;
 
@@ -13,10 +13,9 @@ function [s_step] = get_s_step()
     n= k2 - k1;
 
     u_step=20;
-    yp=41;
 
-    for k=1:n
-        s_step(k)=(y(k)-yp)/u_step;
+    for k=moment_skoku:n
+        s_step(k-moment_skoku+1)=y(k)/u_step;
     end
 end
 

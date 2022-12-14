@@ -1,6 +1,5 @@
 function [Ku, Ke] = DMC_params(D, N, Nu, lambda)
-    load("step_responses_opt.mat");
-    s = s_step_response;
+    s = load("aprox_step_resp.mat").s_step_response;
     
     M = zeros(N, Nu);
     for i = 1:N
